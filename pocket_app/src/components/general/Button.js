@@ -15,11 +15,11 @@ export default function Button(props) {
 
     return (
       <div>
-        <label>{label}</label>
         <button
           className={className}
           onClick={onClick}
         >
+          {label}
           {icon && <FontAwesomeIcon icon={icon} />}
         </button>
       </div>
