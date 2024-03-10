@@ -26,7 +26,7 @@ export default function SelectInput(props) {
           onChange={handleInput}
         >
           {/* map over options and create option elements */}
-          {options.map((option, index) => (
+          {options && options.map((option, index) => (
             <option key={index} value={option.value}>
               {option.label}
             </option>
