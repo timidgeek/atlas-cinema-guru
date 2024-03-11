@@ -2,8 +2,22 @@
 :root {
   --main-red: #E31C25;
   --dark-red: #BB000E;
+
+  --input-gray: #2C2C2C;
+  --background-gray: #222222;
+  --background-black: #161616;
 }
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .App {
   text-align: center;
+  color: white;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--background-gray);
 }

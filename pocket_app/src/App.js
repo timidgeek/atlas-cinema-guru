@@ -4,11 +4,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // component imports
-import Button from './components/general/Button';
-import Input from './components/general/Input';
-import SearchBar from './components/general/SearchBar';
-import SelectInput from './components/general/SelectInput';
 import Authentication from './routes/auth/Authentication';
+import Dashboard from './routes/dashboard/Dashboard';
+import Header from './components/navigation/Header';
 
 // css imports
 import './App.css';
@@ -52,11 +50,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* {isLoggedIn ? <Dashboard /> : <Authentication />} */}
-      <Input label="Username:"/>
-      <SelectInput options={options}/>
-      <Button label="Load More..." className="buttonDefault" />
-      <SearchBar />
+      <Header />
+      {isLoggedIn ? <Dashboard /> : <Authentication />}
     </div>
   );
 }

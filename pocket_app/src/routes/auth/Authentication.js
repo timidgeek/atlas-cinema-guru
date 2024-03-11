@@ -4,6 +4,10 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+// icon imports
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
+
 // component imports
 import Button from '../../components/general/Button';
 import Login from './Login';
@@ -50,7 +54,7 @@ export default function Authentication(props) {
       {_switch ? <Login /> : <Register />}
 
       <Button label="Sign In" onClick={() => setSwitchState(true)} />
-      <Button label="Sign Up" onClick={() => setSwitchState(false)}/>
+      <Button label="Sign Up" onClick={() => setSwitchState(false)} />
     </form>
   )
 }

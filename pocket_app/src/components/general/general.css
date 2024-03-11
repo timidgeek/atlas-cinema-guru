@@ -1,13 +1,5 @@
-/* variables */
-:root {
-  --main-red: #E31C25;
-  --dark-red: #BB000E;
-
-  --input-gray: #2C2C2C;
-  --background-gray: #222222;
-}
-
-.buttonDefault {
+/* #region BUTTON STYLING */
+button {
   background-color: var(--dark-red);
   color: white;
   font-size: 15px;
@@ -16,10 +8,12 @@
   padding: 5px 10px;
   transition-duration: 0.4s;
 }
-.buttonDefault:hover {
+button:hover {
   background-color: var(--main-red);
   cursor: pointer;
 }
+/* #endregion BUTTON STYLING  */
+
 
 select {
   font-size: 14px;
@@ -52,5 +46,4 @@ select {
 .selectDefault:hover .selectContent {
   display: block;
 }
-
 
