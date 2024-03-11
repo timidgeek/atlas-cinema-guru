@@ -11,7 +11,7 @@ export default function Button(props) {
   const {label,
          className, 
          onClick,
-        icon} = props;
+         icon} = props;
 
     return (
       <div>
