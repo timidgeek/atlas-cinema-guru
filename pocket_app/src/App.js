@@ -52,10 +52,10 @@ function App() {
 
   return (
     <div className="App">
-      {isLoggedIn ? <Dashboard /> : <Authentication />}
-      <Input />
+      {/* {isLoggedIn ? <Dashboard /> : <Authentication />} */}
+      <Input label="Username:"/>
       <SelectInput options={options}/>
-      <Button label="Load More..." className="custom-button" />
+      <Button label="Load More..." className="buttonDefault" />
       <SearchBar />
     </div>
   );

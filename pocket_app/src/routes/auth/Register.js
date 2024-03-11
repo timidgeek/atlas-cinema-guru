@@ -7,7 +7,7 @@ import Button from '../../components/general/Button';
 import Input from '../../components/general/Input';
 
 // css imports
-import './app.css';
+import './auth.css';
 
 
 export default function Register(props) {

@@ -1,0 +1,56 @@
+/* variables */
+:root {
+  --main-red: #E31C25;
+  --dark-red: #BB000E;
+
+  --input-gray: #2C2C2C;
+  --background-gray: #222222;
+}
+
+.buttonDefault {
+  background-color: var(--dark-red);
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 2px;
+  padding: 5px 10px;
+  transition-duration: 0.4s;
+}
+.buttonDefault:hover {
+  background-color: var(--main-red);
+  cursor: pointer;
+}
+
+select {
+  font-size: 14px;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px var(--main-red);
+  background-color: var(--input-gray);
+  color: white;
+}
+
+select {
+  position: relative;
+  display: inline-block;
+}
+
+.selectDefault select {
+  display: none; /*hide original SELECT element: */
+}
+
+.selectContent {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.selectDefault:hover .selectContent {
+  display: block;
+}
+
+

@@ -10,7 +10,7 @@ import Login from './Login';
 import Register from './Register';
 
 // css imports
-import './app.css';
+import './auth.css';
 
 
 export default function Authentication(props) {
