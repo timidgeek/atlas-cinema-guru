@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 // component imports
 import Button from '../../components/general/Button';
+import Login from './Login';
+import Register from './Register';
 
 // css imports
 import './app.css';
@@ -21,8 +23,10 @@ export default function Authentication(props) {
 
   return (
     <form>
-      <Button label="Sign In" onClick={setSwitchState(true)} />
-      <Button label="Sign Up" onClick={setSwitchState(false)}/>
+      {_switch ? <Login /> : <Register />}
+
+      <Button label="Sign In" onClick={() => setSwitchState(true)} />
+      <Button label="Sign Up" onClick={() => setSwitchState(false)}/>
     </form>
   )
 }

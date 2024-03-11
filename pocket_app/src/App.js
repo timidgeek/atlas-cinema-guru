@@ -8,6 +8,7 @@ import Button from './components/general/Button';
 import Input from './components/general/Input';
 import SearchBar from './components/general/SearchBar';
 import SelectInput from './components/general/SelectInput';
+import Authentication from './routes/auth/Authentication';
 
 // css imports
 import './App.css';
@@ -51,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* {isLoggedIn ? <Dashboard /> : <Authentication />} */}
+      {isLoggedIn ? <Dashboard /> : <Authentication />}
       <Input />
       <SelectInput options={options}/>
       <Button label="Load More..." className="custom-button" />

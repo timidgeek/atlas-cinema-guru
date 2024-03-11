@@ -10,7 +10,7 @@ import Input from '../../components/general/Input';
 import './app.css';
 
 
-export default function Login(props) {
+export default function Register(props) {
   // destructure props
   const { username,
           password,
@@ -26,7 +26,7 @@ export default function Login(props) {
   )
 }
 
-Login.propTypes = {
+Register.propTypes = {
   username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   setUsername: PropTypes.func.isRequired,
