@@ -23,7 +23,7 @@ export default function Input(props) {
   }
 
     return (
-      <div className="flexbox1">
+      <div>
         {icon && <FontAwesomeIcon icon={icon} className="babyPink" />}
         <label className="label">{label}</label>
         <input

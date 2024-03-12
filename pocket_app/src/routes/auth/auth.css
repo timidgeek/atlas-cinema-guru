@@ -31,6 +31,7 @@ form {
   justify-content: space-between;
 }
 .signBtns {
+  border-radius: 0;
   font-weight: 600;
   font-size: 18px;
   height: 3.5rem;
@@ -57,6 +58,7 @@ form {
   font-size: 16px;
   padding: 1rem;
   border-bottom: 1px solid var(--main-red);
+  outline: none;
 }
 /* #endregion INPUT BOX STYLING */
 

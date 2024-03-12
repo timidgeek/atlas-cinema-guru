@@ -34,7 +34,7 @@ export default function Register(props) {
           <Input           
             className="input"
             icon={faKey}
-            placeholder=" Password: " 
+            placeholder="Password: " 
             value={password} 
             onChange={setPassword} />
         </div>
