@@ -62,7 +62,7 @@ export default function Authentication(props) {
           label="Sign Up" 
           onClick={() => setSwitchState(false)} />
       </div>
-      {_switch ? <Login /> : <Register />}
+      {_switch ? <Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} /> : <Register username={username} setUsername={setUsername} password={password} setPassword={setPassword} />}
     </form>
   )
 }

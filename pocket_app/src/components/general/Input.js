@@ -18,7 +18,7 @@ export default function Input(props) {
          inputAttributes,
           placeholder} = props;
 
-  const handleInput = (e) => {
+  function handleInput(e) {
     setValue(e.target.value);
   }
 

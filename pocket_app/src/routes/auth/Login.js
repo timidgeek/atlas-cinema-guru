@@ -31,13 +31,14 @@ export default function Login(props) {
           icon={faUser}
           placeholder="Username: "
           value={username} 
-          onChange={setUsername} />
+          setValue={setUsername} />
         <Input           
           className="input"
+          type={password}
           icon={faKey}
           placeholder="Password: " 
           value={password} 
-          onChange={setPassword} />
+          setValue={setPassword} />
       </div>
       <div>      
         <Button 
