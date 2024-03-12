@@ -22,15 +22,18 @@ export default function Login(props) {
           setPassword } = props;
 
   return (
-    <div className="flexbox">
+    <div className="center">
+      <div className="flexbox">
       <h2>Sign in with your account</h2>
-      <div>
+      <div className="inputBox">
         <Input 
+          className="input"
           icon={faUser}
           placeholder="Username: "
           value={username} 
           onChange={setUsername} />
-        <Input 
+        <Input           
+          className="input"
           icon={faKey}
           placeholder=" Password: " 
           value={password} 
@@ -38,11 +41,13 @@ export default function Login(props) {
       </div>
       <div>      
         <Button 
+          className="submitButton"
           icon={faKey}
-          label=" Sign In" 
-          className="signInButton" />
+          label=" Sign In" />
       </div>
     </div>
+  </div>
+    
   )
 }
 

@@ -50,6 +50,7 @@ export default function Authentication(props) {
   }
 
   return (
+
     <form onSubmit={handleSubmit}>
       <div className="signBtnsFlex">
         <Button 

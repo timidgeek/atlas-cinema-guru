@@ -5,7 +5,7 @@ button {
   font-size: 15px;
   border: none;
   border-radius: 2px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   transition-duration: 0.4s;
 }
 button:hover {
@@ -52,7 +52,6 @@ select {
 input {
   color: var(--input-gray);
   border: none;
-  border-bottom: 2px solid var(--main-red);
 }
 /* #endregion INPUT STYLING */
 
