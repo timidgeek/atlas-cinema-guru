@@ -20,12 +20,18 @@ export default function Header(props) {
 
   return (
     <nav>
-      <img src="https://picsum.photos/100/100" alt="random-avatar"></img>
-      <p>Welcome, {userUsername}!</p>
+      <p>Cinema Guru</p>
+      <ul>
+        <li>
+          <img src="https://picsum.photos/100/100" alt="random-avatar"></img>
+        </li>
+        <li><p>Welcome, {userUsername}!</p></li>
+        <li>
       <span onClick={logout}> 
         <FontAwesomeIcon icon={faSignOut} />
         Logout
-      </span>
+      </span></li>
+      </ul>
     </nav>
   )
 }

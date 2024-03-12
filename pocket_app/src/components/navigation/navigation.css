@@ -5,4 +5,22 @@ img {
 
 nav {
   background-color: var(--background-black);
+  display: flex;
 }
+
+li {
+  text-decoration: none;
+  display: inline;
+  /* justify-content: flex-end; */
+}
+
+/* Rectangle */
+
+/* position: absolute;
+width: 1920px;
+height: 62px;
+left: 0px;
+top: 0px;
+
+background: #161616;
+border-radius: 0px; */

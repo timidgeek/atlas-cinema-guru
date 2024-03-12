@@ -20,8 +20,8 @@ export default function Button(props) {
           className={className}
           onClick={onClick}
         >
-          {label}
           {icon && <FontAwesomeIcon icon={icon} />}
+          {label}
         </button>
       </div>
     )

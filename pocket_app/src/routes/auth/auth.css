@@ -1,5 +1,43 @@
-/* variables */
-:root {
-  --main-red: #E31C25;
-  --dark-red: #BB000E;
+/* #region ICON STYLING */
+h2 {
+  color: black;
 }
+/* #endregion ICON STYLING */
+
+/* #region FLEXBOX */
+.flexbox {
+  text-align: center;
+  width: 30rem;
+  height: 20rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+/* #endregion FLEXBOX */
+
+/* #region SIGN IN/UP */
+.signBtnsFlex {
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+}
+.signBtns {
+  cursor: pointer;
+  width: 15rem;
+  justify-content: space-between;
+}
+/* #endregion SIGN IN/UP */
+
+
+.signInButton {
+
+  justify-content: flex-end;
+  text-align: end;
+}
+
+/* #region ICON STYLING */
+.babyPink {
+  color: var(--light-red);
+  margin-right: 10px;
+}
+/* #endregion ICON STYLING */

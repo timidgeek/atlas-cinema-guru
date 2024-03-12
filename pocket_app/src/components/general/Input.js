@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // css files
 import './general.css';
+import '../../routes/auth/auth.css';
 
 export default function Input(props) {
   // destructure props
@@ -14,17 +15,19 @@ export default function Input(props) {
          value, 
          setValue, 
          icon, 
-         inputAttributes} = props;
+         inputAttributes,
+          placeholder} = props;
 
   const handleInput = (e) => {
     setValue(e.target.value);
   }
 
     return (
-      <div>
-        <label>{label}</label>
-        {icon && <FontAwesomeIcon icon={icon} /> /* if icon exists, && render it */}
+      <div className="flexbox1">
+        {icon && <FontAwesomeIcon icon={icon} className="babyPink" />}
+        <label className="label">{label}</label>
         <input
+          placeholder={placeholder}
           type={type}
           className={className}
           value={value}

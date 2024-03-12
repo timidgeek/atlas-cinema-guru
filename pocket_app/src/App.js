@@ -50,7 +50,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       {isLoggedIn ? <Dashboard /> : <Authentication />}
     </div>
   );

@@ -51,10 +51,17 @@ export default function Authentication(props) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className="signBtnsFlex">
+        <Button 
+          className="signBtns"
+          label="Sign In" 
+          onClick={() => setSwitchState(true)} />
+        <Button 
+          className="signBtns"
+          label="Sign Up" 
+          onClick={() => setSwitchState(false)} />
+      </div>
       {_switch ? <Login /> : <Register />}
-
-      <Button label="Sign In" onClick={() => setSwitchState(true)} />
-      <Button label="Sign Up" onClick={() => setSwitchState(false)} />
     </form>
   )
 }

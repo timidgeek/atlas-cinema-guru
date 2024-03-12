@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 import Button from '../../components/general/Button';
 import Input from '../../components/general/Input';
 
+// icon imports
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
+
 // css imports
 import './auth.css';
 
@@ -18,10 +22,26 @@ export default function Login(props) {
           setPassword } = props;
 
   return (
-    <div>
-      <Input label="username" value={username} onChange={setUsername} />
-      <Input label="password" value={password} onChange={setPassword} />
-      <Button label="Submit" />
+    <div className="flexbox">
+      <h2>Sign in with your account</h2>
+      <div>
+        <Input 
+          icon={faUser}
+          placeholder="Username: "
+          value={username} 
+          onChange={setUsername} />
+        <Input 
+          icon={faKey}
+          placeholder=" Password: " 
+          value={password} 
+          onChange={setPassword} />
+      </div>
+      <div>      
+        <Button 
+          icon={faKey}
+          label=" Sign In" 
+          className="signInButton" />
+      </div>
     </div>
   )
 }
