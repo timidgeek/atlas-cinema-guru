@@ -44,30 +44,11 @@ export default function Authentication(props) {
         setIsLoggedIn(true);
       }
     } catch (error) {
-      console.error('Authentication error:', error);
+      console.error('ERRR:', error);
+      console.error('Authentication Error:', error.response ? error.response.data : error)
       }
   };
 
-  // define functions
-  // const handleSubmit = (onSubmit) => {
-  //   onSubmit.preventDefault();
-
-  //   const data = { username, password };
-
-  //   let route = _switch ? 'http://localhost:8000/api/auth/login' : 'http://localhost:8000/api/auth/register';
-
-  //   axios.post(route, data)
-  //   .then(response => {
-  //     const token = response.data;
-  //     localStorage.setItem('accessToken', token);
-  //     setUserUsername(username);
-  //     setIsLoggedIn(true);
-  //   })
-  //   .catch(error => {
-  //     console.error('Error signing up:', error);
-  //     console.error('Authentication Error:', error.response ? error.response.data : error)
-  //   })
-  // }
 
   return (
 
@@ -82,7 +63,16 @@ export default function Authentication(props) {
           label="Sign Up" 
           onClick={() => setSwitchState(false)} />
       </div>
-      {_switch ? <Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} /> : <Register username={username} setUsername={setUsername} password={password} setPassword={setPassword} />}
+      {_switch ? <Login 
+                    username={username} 
+                    setUsername={setUsername} 
+                    password={password} 
+                    setPassword={setPassword} /> 
+              : <Register 
+                    username={username} 
+                    setUsername={setUsername} 
+                    password={password} 
+                    setPassword={setPassword} />}
     </form>
   )
 }
