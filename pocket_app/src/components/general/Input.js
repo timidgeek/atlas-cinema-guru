@@ -39,11 +39,10 @@ export default function Input(props) {
 }
 
 Input.propTypes = {
-  label: PropTypes.string.isRequired, 
-  type: PropTypes.string.isRequired, 
-  className: PropTypes.string.isRequired, 
-  value: PropTypes.node.isRequired, 
-  setValue: PropTypes.func.isRequired, 
-  icon: PropTypes.element, 
+  label: PropTypes.string, 
+  type: PropTypes.string, 
+  className: PropTypes.string, 
+  value: PropTypes.node, 
+  setValue: PropTypes.func,
   inputAttributes: PropTypes.object
 }

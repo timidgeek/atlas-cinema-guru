@@ -10,6 +10,7 @@ import './general.css';
 export default function Button(props) {
   // destructure props
   const {label,
+        type,
          className, 
          onClick,
          icon} = props;
@@ -17,6 +18,7 @@ export default function Button(props) {
     return (
       <div>
         <button
+          type={type}
           className={className}
           onClick={onClick}
         >
@@ -28,8 +30,7 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired, 
-  onClick: PropTypes.func.isRequired, 
-  icon: PropTypes.element, 
+  label: PropTypes.string,
+  className: PropTypes.string, 
+  onClick: PropTypes.func,
 }

@@ -26,31 +26,29 @@ function App() {
 
   useEffect(() => {
     // function to execute on component mount
-    const fetchData = async () => {
-      const accessToken = localStorage.getItem('accessToken');
-      if (accessToken) {
-        try {
-          // send a post request to /api/auth/ with the authorization header set to Bearer <accessToken>
-          const response = await axios.post('/api/auth/', {}, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`
-            }
-          });
-          // on success, set isLoggedIn to true and userUsername to the username from the response object
-          setIsLoggedIn(true);
-          setUserUsername(response.data.username);
-        } catch (e) {
-          console.error('Error fetching user data:', e);
+    const accessToken = localStorage.getItem('accessToken');
+    console.log(accessToken);
+    if (accessToken) {
+      axios.post('http://localhost:8000/api/auth/', {}, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`
         }
-      }
-    };
-
-    fetchData();
-  }, []); // empty dependency array ensures the effect runs only once on mount
+      })
+      .then(response => {
+        // on success, set isLoggedIn to true and userUsername to the username from the response object
+        setIsLoggedIn(true);
+        setUserUsername(response.data.username);
+      })
+      .catch(error => {
+        // handle error
+        console.error('Error fetching user data:', error);
+      });
+    }
+  }, []); 
 
   return (
     <div className="App">
-      {isLoggedIn ? <Dashboard /> : <Authentication />}
+      {isLoggedIn ? <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} /> : <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername} />}
     </div>
   );
 }

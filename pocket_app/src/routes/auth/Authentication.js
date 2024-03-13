@@ -26,28 +26,48 @@ export default function Authentication(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  // define functions
-  const handleSubmit = (onSubmit) => {
+  const handleSubmit = async (onSubmit) => {
     onSubmit.preventDefault();
 
-    const data = {
-      username: username,
-      password: password
-    };
+    const route = _switch ? 'http://localhost:8000/api/auth/login' : 'http://localhost:8000/api/auth/register';
+    console.log({ username, password });
 
-    let route = _switch ? '/api/auth/login' : '/api/auth/register';
+    try {
+      const response = await axios.post(route, { username, password });
 
-    axios.post(route, data)
-    .then(response => {
-      const token = response.data.token;
-      localStorage.setItem('accessToken', token);
-      setUsername(username);
-      setIsLoggedIn(true);
-    })
-    .catch(error => {
-      console.error('Error signing up:', error);
-    })
-  }
+      const { accessToken } = response.data;
+
+      if (accessToken) {
+        localStorage.setItem('accessToken', accessToken);
+        console.log(typeof setUserUsername);
+        setUserUsername(username);
+        setIsLoggedIn(true);
+      }
+    } catch (error) {
+      console.error('Authentication error:', error);
+      }
+  };
+
+  // define functions
+  // const handleSubmit = (onSubmit) => {
+  //   onSubmit.preventDefault();
+
+  //   const data = { username, password };
+
+  //   let route = _switch ? 'http://localhost:8000/api/auth/login' : 'http://localhost:8000/api/auth/register';
+
+  //   axios.post(route, data)
+  //   .then(response => {
+  //     const token = response.data;
+  //     localStorage.setItem('accessToken', token);
+  //     setUserUsername(username);
+  //     setIsLoggedIn(true);
+  //   })
+  //   .catch(error => {
+  //     console.error('Error signing up:', error);
+  //     console.error('Authentication Error:', error.response ? error.response.data : error)
+  //   })
+  // }
 
   return (
 

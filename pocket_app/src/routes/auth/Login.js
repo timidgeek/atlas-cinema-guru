@@ -53,9 +53,9 @@ export default function Login(props) {
 }
 
 Login.propTypes = {
-  username: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  setUsername: PropTypes.func.isRequired,
-  setPassword: PropTypes.func.isRequired
+  username: PropTypes.string,
+  password: PropTypes.string,
+  setUsername: PropTypes.func,
+  setPassword: PropTypes.func
 }
   
