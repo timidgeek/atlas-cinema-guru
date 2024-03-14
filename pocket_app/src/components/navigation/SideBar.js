@@ -31,6 +31,11 @@ const mockActivities = [
       title: 'Eternal Sunshine of the Spotless Mind',
       date: "March 10, 2024"
   },
+  {
+    userUsername: 'Kier',
+    title: 'Annhilation',
+    date: "March 14, 2024"
+  }
 ];
 
 export default function SideBar() {

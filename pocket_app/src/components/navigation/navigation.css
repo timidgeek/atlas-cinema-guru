@@ -66,11 +66,13 @@ nav > ul li {
 }
 
 nav ul {
+  margin: 0;
   padding: 0;
   width: 100%;
 }
 
 .activities {
+  margin-left: 1rem;
   background-color: var(--input-gray);
   padding: 0.5rem 1rem;
   text-decoration-color: white;
