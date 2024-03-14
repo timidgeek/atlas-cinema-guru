@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // component imports
 import Header from "../../components/navigation/Header";
 import SideBar from "../../components/navigation/SideBar";
+import HomePage from "./HomePage";
+import Favorites from "./Favorites";
+import WatchLater from "./WatchLater";
 
 // css imports
 import './dashboard.css';
