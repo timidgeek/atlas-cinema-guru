@@ -1,7 +1,7 @@
 // functional imports
 import React from "react";
 import PropTypes from 'prop-types';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // component imports
 import Header from "../../components/navigation/Header";
@@ -20,6 +20,12 @@ export default function Dashboard(props) {
         userUsername={userUsername} 
         setIsLoggedIn={setIsLoggedIn} />
       <SideBar />
+      <Routes>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/watchlater" element={<WatchLater />} />
+          <Route path="*" element={<Navigate to="/home" />} />
+        </Routes>
     </div>
   </BrowserRouter>
  )
