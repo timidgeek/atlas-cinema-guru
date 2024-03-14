@@ -1,6 +1,7 @@
 // functional imports
 import React from "react";
 import PropTypes from 'prop-types';
+import { BrowserRouter } from "react-router-dom";
 
 // component imports
 import Header from "../../components/navigation/Header";
@@ -13,12 +14,14 @@ export default function Dashboard(props) {
   const { userUsername, setIsLoggedIn } = props;
 
  return (
-  <div>
-    <Header
-      userUsername={userUsername} 
-      setIsLoggedIn={setIsLoggedIn} />
-    <SideBar />
-  </div>
+  <BrowserRouter>
+    <div>
+      <Header
+        userUsername={userUsername} 
+        setIsLoggedIn={setIsLoggedIn} />
+      <SideBar />
+    </div>
+  </BrowserRouter>
  )
 }
 

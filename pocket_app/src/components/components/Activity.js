@@ -5,12 +5,16 @@ import React from "react";
 import "./components.css";
 import "../navigation/navigation.css"
 
-export default function Activity() {
+export default function Activity(props) {
+  // destructure props
+  const { userUsername, title, date } = props;
+  
   return(
     <li>
       <p>
-        <span className="logout">userUsername</span> added 
-        <span className="logout">Title</span> to watch later - Date
+        <span className="logout">{userUsername}</span> added 
+        <span className="logout">{title}</span> to watch later - 
+        <span className="italic">{date}</span>
       </p>
     </li>
   )

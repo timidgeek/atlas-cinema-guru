@@ -1,11 +1,12 @@
 // functional imports
 import React from "react";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { useNavigate, NavLink } from 'react-router-dom';
 import axios from "axios";
+
+// icon imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faFolder, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faHome, faStar } from "@fortawesome/free-solid-svg-icons";
 
 // component imports
 import Activity from "../components/Activity";
@@ -47,19 +48,25 @@ export default function SideBar() {
   }, []);
 
   return (
-    <nav className="navigation">
-      <ul>
-        <li onClick={() => setPage('Home')} className={selected === 'Home' ? 'selected' : ''}>
-          <FontAwesomeIcon icon={faFolder} />
-          <NavLink to="/home">Home</NavLink>
+    <nav>
+      <ul className="sidebarNav">
+        <li 
+          onClick={() => setPage('Home')} 
+          className={selected === 'Home' ? 'selected' : ''}>
+            <FontAwesomeIcon icon={faHome} />
+            <NavLink to="/home">Home</NavLink>
         </li>
-        <li onClick={() => setPage('Favorites')} className={selected === 'Favorites' ? 'selected' : ''}>
-          <FontAwesomeIcon icon={faStar} />
-          <NavLink to="/favorites">Favorites</NavLink>
+        <li 
+          onClick={() => setPage('Favorites')} 
+          className={selected === 'Favorites' ? 'selected' : ''}>
+            <FontAwesomeIcon icon={faStar} />
+            <NavLink to="/favorites">Favorites</NavLink>
         </li>
-        <li onClick={() => setPage('Watch Later')} className={selected === 'Watch Later' ? 'selected' : ''}>
-        <FontAwesomeIcon icon={faClock} />
-          <NavLink to="/watchlater">Watch Later</NavLink>
+        <li 
+          onClick={() => setPage('Watch Later')} 
+          className={selected === 'Watch Later' ? 'selected' : ''}>
+            <FontAwesomeIcon icon={faClock} />
+            <NavLink to="/watchlater">Watch Later</NavLink>
         </li>
       </ul>
       {showActivities && (
@@ -73,11 +80,4 @@ export default function SideBar() {
       )}
     </nav>
   )
-}
-
-SideBar.propTypes = {
-  selected: PropTypes.string,
-  small: PropTypes.bool, 
-  activities: PropTypes.array, 
-  showActivities: PropTypes.bool
 }

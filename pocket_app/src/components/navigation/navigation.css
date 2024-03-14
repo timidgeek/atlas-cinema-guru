@@ -12,6 +12,11 @@ nav {
   padding: 0 3rem 0 3rem;
 }
 
+.sidebarNav {
+  text-decoration: none;
+  color: white;
+}
+
 p {
   padding: 0 15px 0 5px;
 }
