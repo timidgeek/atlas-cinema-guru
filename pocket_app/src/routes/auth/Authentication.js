@@ -1,7 +1,6 @@
 // functional imports
 import React from 'react';
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 
 // icon imports
@@ -55,10 +54,12 @@ export default function Authentication(props) {
     <form onSubmit={handleSubmit}>
       <div className="signBtnsFlex">
         <Button 
+          type="button"
           className="signBtns"
           label="Sign In" 
           onClick={() => setSwitchState(true)} />
         <Button 
+        type="button"
           className="signBtns"
           label="Sign Up" 
           onClick={() => setSwitchState(false)} />
@@ -77,8 +78,5 @@ export default function Authentication(props) {
   )
 }
 
-Authentication.propTypes = {
-  setIsLoggedIn: PropTypes.func.isRequired,
-  setUserUsername: PropTypes.func.isRequired
-}
+
   

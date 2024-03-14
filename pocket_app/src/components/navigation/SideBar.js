@@ -14,12 +14,31 @@ import Activity from "../components/Activity";
 // css imports
 import "./navigation.css";
 
+// dummy activities data
+const mockActivities = [
+  {
+      userUsername: 'Foster',
+      title: 'Interstellar',
+      date: "March 12, 2024"
+  },
+  {
+      userUsername: 'Heather',
+      title: 'Jackie Brown',
+      date: "March 11, 2024"
+  },
+  {
+      userUsername: 'Lindsey',
+      title: 'Eternal Sunshine of the Spotless Mind',
+      date: "March 10, 2024"
+  },
+];
+
 export default function SideBar() {
   // define state variables
   const [selected, setSelected] = useState('home');
   const [small, setSmall] = useState(true);
   const [activities, setActivities] = useState([]);
-  const [showActivities, setShowActivities] = useState(false);
+  const [showActivities, setShowActivities] = useState(true);
   const navigate = useNavigate();
 
   // define functions
@@ -38,19 +57,24 @@ export default function SideBar() {
     setSmall(!small);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/activity');
-        setActivities(response.data);
-        setShowActivities(true);
-      } catch (error) {
-        console.error('Error fetching activities:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const accessToken = localStorage.getItem('acessToken');
+  //       const response = await axios.get('http://localhost:8000/api/activity', {
+  //         headers: {
+  //           Authorization: `Bearer ${accessToken}` 
+  //         }
+  //       });
+  //       setActivities(response.data);
+  //       setShowActivities(true);
+  //     } catch (error) {
+  //       console.error('Error fetching activities:', error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
 
   return (
@@ -76,16 +100,22 @@ export default function SideBar() {
         </li>
       </ul>
       {showActivities && (
-        <ul className="activities">
-          {activities.slice(0, 10).map((activity, index) => (
-            <Activity
-                key={index}
-                userUsername={activity.userUsername}
-                title={activity.title}
-                date={activity.date}
-                  />
-          ))}
-        </ul>
+        <div className="activities">
+          <h1 className="underline">Latest Activities</h1>
+          <ul>
+            {mockActivities.slice(0, 10).map((activity) => {
+              return (
+              <Activity
+                  // key={index}
+                  userUsername={activity.userUsername}
+                  title={activity.title}
+                  date={activity.date}
+                    />
+              )
+            })
+          }
+          </ul>
+        </div>
       )}
     </nav>
 

@@ -1,8 +1,13 @@
+// functional imports
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+// component imports
 import MovieCard from '../../components/movies/MovieCard';
 import Filter from '../../components/movies/Filter';
-import Button from '../../components/Button';
+import Button from '../../components/general/Button'
+
+// css imports
 import './dashboard.css';
 
 export default function HomePage() {
@@ -14,13 +19,9 @@ export default function HomePage() {
   const [title, setTitle] = useState('');
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    loadMovies(page);
-  }, [minYear, maxYear, genres, sort, title, page]);
-
   const loadMovies = async (pageNumber) => {
     try {
-      const response = await axios.get('/api/titles/advancedsearch', {
+      const response = await axios.get('http://localhost:8000/api/titles/advancedsearch', {
         params: {
           minYear,
           maxYear,
@@ -35,6 +36,10 @@ export default function HomePage() {
       console.error('Error loading movies:', error);
     }
   };
+
+  useEffect(() => {
+    loadMovies(page);
+  }, [minYear, maxYear, genres, sort, title, page]);
 
   const handleLoadMore = () => {
     setPage(page + 1);

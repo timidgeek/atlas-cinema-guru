@@ -29,14 +29,14 @@ export default function Login(props) {
         <Input 
           className="input"
           icon={faUser}
-          placeholder="Username: "
+          placeholder="Username"
           value={username} 
           setValue={setUsername} />
         <Input           
           className="input"
           type={password}
           icon={faKey}
-          placeholder="Password: " 
+          placeholder="Password" 
           value={password} 
           setValue={setPassword} />
       </div>

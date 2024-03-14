@@ -19,11 +19,11 @@ export default function Header(props) {
   }
 
   return (
-    <nav>
-      <p>Cinema Guru</p>
+    <nav class="headerNav">
+      <p class="title">Cinema Guru</p>
       <div className="welcome">
-        <img src="https://picsum.photos/100/100" alt="random-avatar"></img>
-        <p>Welcome, {userUsername}!</p>
+        <img src="https://picsum.photos/100/100" alt="random-avatar" className="randomAvi"></img>
+        <p class="title">Welcome, {userUsername}!</p>
         <span onClick={logout} className="logout"> 
           <FontAwesomeIcon icon={faSignOut} />
           Logout

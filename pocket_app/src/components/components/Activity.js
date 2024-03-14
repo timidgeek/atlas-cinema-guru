@@ -11,10 +11,10 @@ export default function Activity(props) {
   
   return(
     <li>
-      <p>
+      <p className="latestActivities">
         <span className="logout">{userUsername}</span> added 
-        <span className="logout">{title}</span> to watch later - 
-        <span className="italic">{date}</span>
+        <span className="logout"> {title}</span> to watch later - 
+        <span className="italic"> {date}</span>
       </p>
     </li>
   )

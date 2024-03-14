@@ -1,11 +1,11 @@
 /* #region HEADER STYLING */ 
-img {
+.randomAvi {
   border-radius: 50%;
   border: 2px solid var(--main-red);
   height: 2rem;
 }
 
-nav {
+.headerNav {
   background-color: var(--background-black);
   display: flex;
   flex-direction: row;
@@ -18,7 +18,7 @@ nav {
   color: white;
 }
 
-p {
+.title {
   padding: 0 15px 0 5px;
 }
 
@@ -35,18 +35,14 @@ p {
 /* #endregion HEADER STYLING */
 
 /* #region SIDEBAR STYLING */
-
-
 nav ul li {
   list-style: none;
-  /* text-wrap: nowrap; */
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
 }
-
 
 nav > ul li {
   padding: 1rem 0;
@@ -58,18 +54,16 @@ nav > ul li {
 }
 
 .sidebarNav {
-  width: 10rem;
+  width: 15rem;
   height: 100vh;
   background-color: var(--dark-red);
   color: white;
   text-decoration: none;
-  text-align: left; 
-  white-space: nowrap;
+  text-align: left;
   overflow: visible;
   position: relative;
   font-weight: 700;
 }
-
 
 nav ul {
   padding: 0;
@@ -78,12 +72,12 @@ nav ul {
 
 .activities {
   background-color: var(--input-gray);
-  box-sizing: border-box;
   padding: 0.5rem 1rem;
-  margin: 1rem;
-  text-decoration-line: underline;
   text-decoration-color: white;
-  text-decoration-style: solid;
+  width: 11rem;
+}
 
+.underline {
+  text-decoration: underline;
 }
 /* #endregion SIDEBAR STYLING */
