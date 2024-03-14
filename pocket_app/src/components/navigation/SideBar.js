@@ -6,7 +6,7 @@ import axios from "axios";
 
 // icon imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faHome, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faFolder, faStar } from "@fortawesome/free-solid-svg-icons";
 
 // component imports
 import Activity from "../components/Activity";
@@ -33,12 +33,17 @@ export default function SideBar() {
     setSelected(pageName);
     navigate(routes[pageName]);
   }
+  
+  const toggleSidebar = () => {
+    setSmall(!small);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:8000/api/activity');
         setActivities(response.data);
+        setShowActivities(true);
       } catch (error) {
         console.error('Error fetching activities:', error);
       }
@@ -47,37 +52,42 @@ export default function SideBar() {
     fetchData();
   }, []);
 
+
   return (
-    <nav>
-      <ul className="sidebarNav">
+    <nav className="sidebarNav" onMouseEnter={toggleSidebar} onMouseLeave={toggleSidebar}>
+      <ul>
         <li 
           onClick={() => setPage('Home')} 
           className={selected === 'Home' ? 'selected' : ''}>
-            <FontAwesomeIcon icon={faHome} />
+            <FontAwesomeIcon icon={faFolder} className="iconPadding" />
             <NavLink to="/home">Home</NavLink>
         </li>
         <li 
           onClick={() => setPage('Favorites')} 
           className={selected === 'Favorites' ? 'selected' : ''}>
-            <FontAwesomeIcon icon={faStar} />
+            <FontAwesomeIcon icon={faStar} className="iconPadding" />
             <NavLink to="/favorites">Favorites</NavLink>
         </li>
         <li 
           onClick={() => setPage('Watch Later')} 
           className={selected === 'Watch Later' ? 'selected' : ''}>
-            <FontAwesomeIcon icon={faClock} />
+            <FontAwesomeIcon icon={faClock} className="iconPadding" />
             <NavLink to="/watchlater">Watch Later</NavLink>
         </li>
       </ul>
       {showActivities && (
-        <ul className="activity">
-          {activities.slice(0, 10).map(activity => (
-            <li key={activity.id}>
-              <Activity {...activity} />
-            </li>
+        <ul className="activities">
+          {activities.slice(0, 10).map((activity, index) => (
+            <Activity
+                key={index}
+                userUsername={activity.userUsername}
+                title={activity.title}
+                date={activity.date}
+                  />
           ))}
         </ul>
       )}
     </nav>
+
   )
 }
